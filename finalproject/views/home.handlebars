@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/style.css">
+
+<h1><span id="homeSpan">Workout Tracker<span></h1>
+
+<form id="addNewEx" class="newForm" method="POST" onsubmit = "return submitform(this);" action="/insert">
+	<fieldset>
+		<legend>New Exercise</legend>
+		<label>Exercise:</label><input class="inBox" type="text" id="nName" name="name" required="required">
+		<label>Reps:</label><input type="text" class="inBox" name="Reps" id="nReps">
+		
+		<label>Weight:</label><input type="text" class="inBox" maxlength="5" name="Weight" id="nWeight" >
+		<label>Date:</label><input type="date" class="inBox" name="Date" id="nDate" value = "2016-01-01" required="required">
+		
+    <select class="inBox" name="lbs" id="nLbs">
+      <option value="0">KGS</option>
+      <option value="1">LBS</option>
+    </select>
+   <button type ="submit" id=newEx>Add Exercise</button>
+	</fieldset>
+  
+</form>
+
+<table id="tables" border="1" >
+
+<th id="names">Workout
+<th id="reps">Reps
+<th id="weights">Weight
+<th id="dates">Date
+<th id="lb">LBS(1) or KGS(0)
+<th id="options">Options
+
+  {{#each results}}
+    <tr><td>{{this.name}}</td> <td>{{this.reps}} <td>{{this.weight}} <td>{{this.date}} <td>{{this.lbs}} 
+    <td>
+    	<form method="POST" id="updForm" action="/update"><input type="hidden" name="id" value="{{this.id}}"><input type=submit id="btnUp" value="Update"></input></form> 
+    	<form method="POST" id="delForm" action="/"><input type="hidden" name="rId" value="{{this.id}}"><input type="submit" id="btnDel" name ="{{this.id}}" value="Delete" onclick="delRows(this, {{this.id}})"></input></form>
+    </tr>
+  {{/each}}
+</table>
+

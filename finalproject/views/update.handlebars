@@ -1,0 +1,39 @@
+<form method = "POST" class="newForm" id=updateEx action="/">
+	<fieldset>
+		<legend>Edit Exercise</legend>
+		<label>Exercise:</label><input type="text" class="inBox" id="uName" name="name" value="{{this.name}}" required="required">
+		<label>Reps:</label><input type="text" class="inBox" name="Reps" value="{{this.reps}}" id="uReps">
+		<label>Weight:</label><input type="text"  class="inBox" maxlength="5" name="Weight" id="uWeight" value="{{this.weight}}">
+		<label>Date:</label><input type="date" class="inBox" name="Date" id="uDate" required="required"  value="{{this.date}}">
+		
+		
+		<var id="upLbs" value="{{this.lbs}}" name="lbsVar">
+		
+		
+
+
+
+
+
+		<select class="inBox" name="lbs" id="uLbs">
+		<option id=KGopt value="0">KGS</option>
+		<option id=LBopt value="1">LBS</option>
+		<script>
+
+			var val={{this.lbs}};
+			if(val){
+				document.getElementById("LBopt").selected="true";
+			} else {
+				document.getElementById("KBopt").selected="true";
+			}
+
+		</script>
+		
+			
+	    <input type="hidden" id="uId" value="{{this.id}}">
+	    <button id=updateDataButton>Update Exercise</button>
+
+	</fieldset>
+  
+</form>
+

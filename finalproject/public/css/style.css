@@ -1,0 +1,80 @@
+h1{
+	text-align:center;
+	margin-right:25%;
+}
+
+span{
+	color: darkgreen;
+    background-color: silver;
+   
+}
+
+body{
+	background-image:url("metalTile.gif");
+}
+legend{
+	background-color:lightseagreen;
+	border-style: double;
+    border-color: gray;
+}
+fieldset{
+	background-color:lightseagreen;
+}
+
+input :focus{
+	background-color: blue;
+}
+input.inBox{
+	background-color: lightgray;
+    border: double;
+}
+input.inBox:focus{
+	background-color: red;
+}
+input#nName, input#uName{
+	width: 23%;
+}
+
+select.inBox{
+    background-color: lightgrey;
+    border-style: double;
+    border-width: 3px;
+    border-color: black;   
+    -webkit-border-radius: 0;
+}
+
+input[type=button], input[type=submit], button{
+	background-color: lightblue;
+	width:100%;
+	margin: 0 auto;
+}
+input[type=button]:active, input[type=submit]:active, button:active{
+	background-color: red;
+	text-decoration-color: white;
+}
+form#addNewEx, form#updateEx{
+	width:70%;
+}
+form#updForm{
+	width:100%;
+}
+
+table{
+	border-color:black;
+	width: 69.8%;
+}
+
+th{
+	background-color:seagreen;
+	color:white;
+	width:10%;
+}
+th#names{
+	width:30%;
+}
+td{
+	background-color: seagreen;
+	color:white;
+	text-align:center;
+	height:10px;
+}
